@@ -1,0 +1,43 @@
+<html>
+<head>
+      <title> Demo 1 </title>
+<script type="text/javascript">
+function process_request()
+{
+        var txt;
+        var xyz;
+        var input = document.getElementById('complete_field').value;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();       
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+        }
+        //xmlhttp.setRequestHeader("text/xml");
+        
+        xmlhttp.onreadystatechange=function()
+        {
+             if (xmlhttp.readyState==4 && xmlhttp.status==200)
+             {
+                     xmlDoc=xmlhttp.responseXML;
+                     txt="";                   
+                     xyz=xmlDoc.getElementsByTagName("suggestion");
+                     for (i=0;i<xyz.length;i++)
+                     {
+                        txt=txt + xyz[i].getAttribute("data")+"<br />";  
+                     }
+                    document.getElementById("result").innerHTML=txt;
+             }
+        }
+        xmlhttp.open("GET","suggest?keyword_entered="+input,true);
+        xmlhttp.send();          
+}
+</script>
+</head>
+<body>      
+            <input type="text" size="20" id="complete_field" onkeyup="process_request();"  />
+            <div id="result"></div>
+</body>
+</html>

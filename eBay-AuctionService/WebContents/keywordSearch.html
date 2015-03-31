@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+    <title>KeyWord Search</title>
+    <script type="text/javascript" src="autosuggest2.js"></script>
+        <script type="text/javascript" src="suggestions2.js"></script>
+        <link rel="stylesheet" type="text/css" href="autosuggest.css" />        
+        <script type="text/javascript">
+            window.onload = function () {
+                var oTextbox = new AutoSuggestControl(document.getElementById("txt1"), new StateSuggestions());        
+            }
+            
+            function check()
+            {
+                var searchtext = document.getElementById("txt1").value;
+                if(searchtext=='')
+                {
+                    //alert('Enter any character');
+                    return false;
+                }
+            }
+        </script>     
+		<link rel="stylesheet" type="text/css" href="styling.css">
+   
+
+</head>
+
+<body>
+    <div class="divWholePage">
+			
+			<div class="divSection">
+				<div class="divBackgroundImage" style="">
+                                
+                                </div>
+                           
+				<div class="divRandomText">
+                                     <div class="header" style="font-size: 24px; color: appworkspace;">
+                                        <a href="keywordSearch.html" style="background-color:rgba(115, 112, 201, 0.6);">Home</a>
+                                        <a href="getItem.html" style="background-color:rgba(115, 112, 201, 0.6);">Item Search</a>
+                                    </div>
+                                    <div class="displayleft tsearch">
+                                        <form action="search" onsubmit="return check()">
+                                            <input type="text" name="q" id="txt1" autocomplete="off" class="textbox"/>
+                                            <input type="hidden" name="numResultsToSkip" value="0" />
+                                            <input type="hidden" name="numResultsToReturn" value="20000" />
+                                            <input type="submit" />
+                                        </form>
+                                         
+                                        
+                                    </div>	
+                                    <div id ="Items" class="displayright ">
+                                       
+                                               
+                                                
+                                    </div> 
+									
+				</div>
+			</div>
+			
+
+    
+    
+   
+<div>
+    
+    
+</div>
+
+
+    </div>
+</body>
+</html>

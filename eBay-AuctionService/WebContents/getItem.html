@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styling.css">
+        <script>
+            function check()
+            {
+                var searchtext = document.getElementById("txt1").value;
+                if(searchtext=='')
+                {
+                    //alert('Enter any character');
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+         <div class="divWholePage">
+			
+			<div class="divSection">
+                            <div class="header" style="font-size: 24px;padding-top: 10%;">
+                                        <a href="keywordSearch.html" style="background-color:rgba(115, 112, 201, 0.6);">Home</a>
+                                         <a href="getItem.html" style="background-color:rgba(115, 112, 201, 0.6);">Item Search</a>
+                                    </div>
+				<div class="divBackgroundImage" style="">
+                                
+                                </div>
+				<div class="divRandomText">
+                                    
+                                    <div class="displaycenter tsearch">
+                                        <form action="item" onsubmit="return check()">
+                                            <input type="text" name="id" id="txt1" placeholder="1045033048" autocomplete="off">
+                                            <input type="submit">
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+        </div>
+                       
+    </body>
+</html>
